@@ -8,6 +8,16 @@ var gulp = require('gulp'), //Load gulp first!//
     autoprefixer = require('gulp-autoprefixer');
     cssnano = require('gulp-cssnano');
     prettyError = require('gulp-prettyerror');
+    babel = require("gulp-babel");
+
+var input= 'js/*.js';
+var output= './js/transpiled';
+
+gulp.task('babel', function() {
+  return gulp.src(input)
+  .pipe(babel())
+  .pipe(gulp.dest(output));
+  });
 
 gulp.task('sass', function() {
   return gulp.src('./scss/style.scss')
@@ -25,14 +35,14 @@ gulp.task('sass', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src(['./js/*.js'])
+  return gulp.src(['./js/transpiled/*.js'])
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failAfterError())
 });    
 
 gulp.task('script', gulp.series('lint', function scripts() {
-  return gulp.src('./js/*.js')
+  return gulp.src('./js/transpiled/*.js')
   .pipe(uglify())
   .pipe(rename({ extname: '.min.js' }))
   .pipe(gulp.dest('./build/js'))
@@ -40,7 +50,7 @@ gulp.task('script', gulp.series('lint', function scripts() {
 
 gulp.task('watch', function() {
   gulp.watch('./scss/*.scss', gulp.series('sass'));
-  gulp.watch('js/*.js', gulp.series('script'));
+  gulp.watch('js/*.js', gulp.series(['babel','script']));
 });
 
 gulp.task('browser-sync', function() {
