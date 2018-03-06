@@ -1,10 +1,12 @@
   
- # Project 2 - Instanews App
+ # Instanews App
+
+ Using APIs, Jquery, SCSS, and HTML5, I have created a responsive app that pulls news stories from the New York Times API.
   
- -Click on the select bar and choose the category of the story you wish to read.
+ * Click on the select bar and choose the category of the story you wish to read.
+
+ ![ScreenShot](/assets/images/instanews_screenshot.png)  
  
- Using APIs, Jquery, SCSS, and HTML, I have created a webpage that pulls news stories from the New York Times API.
-  
 
  ## Take aways
   
@@ -12,17 +14,27 @@
   
 Built With
   
- * [VScode](http://www.vscode.com) - Text Editor
+ [VScode](http://www.vscode.com) - Text Editor
+
+ ### ...and
+
+* Html 5
+* CSS
+* SCSS
+* JavaScript
+* jQuery
+* Gulp
+* Babel
+* Eslint
  
+ ## Authors
  
- # Authors
+ Audra Kornicki [Audrobot](https://github.com/Audrobot)
  
- * **Audra Kornicki** [Audrobot](https://github.com/Audrobot)
- 
- # License
+ ## License
  
  This project is unlicensed
  
- # Acknowledgments
+ ## Acknowledgments
  
- * Thank you to Sean, Ian, Jim & RED Academy for all the support and help!
+ Thank you to Sean, Ian, Jim & RED Academy for all the support and help!
